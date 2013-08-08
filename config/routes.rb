@@ -1,7 +1,9 @@
 Helpdesk::Application.routes.draw do
 
   root :to => "tickets#index"
-  resources :tickets
+  resources :tickets do
+    resources :activities
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
