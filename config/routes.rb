@@ -5,7 +5,8 @@ Helpdesk::Application.routes.draw do
     resources :activities
   end
 
-  resources :incoming_mails
+  post '/incoming_mails' => 'incoming_mails#create'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
