@@ -12,7 +12,7 @@ skip_before_filter :verify_authenticity_token
     id = subject[/^Update (\d+)$/, 1]
     if id.present?
       @ticket = Ticket.find(id)
-      @ticket.activities.create! subject: subject, description: body.decoded, from: from, email_address: from
+      @ticket.activities.create! subject: subject, description: body, from: from, email_address: from
     end
   end
 end
