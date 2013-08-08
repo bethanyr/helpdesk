@@ -11,17 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130808001811) do
+ActiveRecord::Schema.define(:version => 20130808013743) do
 
   create_table "activities", :force => true do |t|
     t.string   "subject"
     t.text     "description"
-    t.string   "type"
+    t.string   "activity_type"
     t.string   "from"
-    t.string   "email"
+    t.string   "email_address"
     t.integer  "ticket_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   add_index "activities", ["ticket_id"], :name => "index_activities_on_ticket_id"

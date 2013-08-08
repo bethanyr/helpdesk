@@ -1,0 +1,11 @@
+<h2>Activity Page</h2>
+<div id="activity">
+<h2>Activity: <%= @activity.subject %></h2>
+<h2>Description: <%= @activity.description %></h2>
+<h2>Type: <%=@activity.activity_type %></h2>
+<h2>Email Address: <%=@activity.email_address%></h2>
+<h2>From: <%=@activity.from%></h2>
+</div>
+<%= link_to "Edit Activity", [:edit, @ticket, @activity] %> |
+<%= link_to "Delete Activity", [@ticket, @activity], :method => :delete, :confirm => "Are you sure you want to delete this Activity?" %> |
+<%= link_to "View Tickets", root_path %>

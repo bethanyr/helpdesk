@@ -9,9 +9,9 @@ feature "Creating Activities" do
     click_link "New Activity"
     fill_in "Subject", :with => "My wireless is not working"
     fill_in "Description", :with => "It has not been working since 10am this morning."
-    fill_in "Type", :with => "email"
+    fill_in "Activity type", :with => "email"
     fill_in "From", :with => "Bethany Rentz"
-    fill_in "Email", :with => "ticket@test.com"
+    fill_in "Email address", :with => "ticket@test.com"
     click_button "Create Activity"
     page.should have_content("Activity has been created.")
     within("#activity") do

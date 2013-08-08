@@ -1,0 +1,32 @@
+<h2>New Activity</h2>
+<%= form_for [@ticket, @activity] do |f| %>
+
+  <div id="activity">
+  <p>
+    <%= f.label :subject %> <br />
+    <%= f.text_field :subject %>
+  </p>
+
+  <p>
+    <%= f.label :from %><br />
+    <%= f.text_field :from %>
+  </p>
+
+  <p>
+    <%= f.label :email_address %><br />
+    <%= f.text_field :email_address %>
+  </p>
+
+  <p>
+    <%= f.label :activity_type %><br />
+    <%= f.text_field :activity_type %>
+  </p>
+
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_field :description %><br />
+  </p>
+  </div>
+  <%= f.submit %>
+<% end %>
+
