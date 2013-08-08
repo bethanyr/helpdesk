@@ -1,6 +1,5 @@
 class HelpdeskMailer < ActionMailer::Base
-  default from: "from@example.com"
-
+  default from: ENV["GMAIL_USERNAME"]
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
   #
@@ -8,9 +7,7 @@ class HelpdeskMailer < ActionMailer::Base
   #
   def ticket_confirmation(ticket)
     @ticket = ticket
-    @greeting = "Hi"
     @mail_to = "bethanynrentz@gmail.com"
-
-    mail to: @mail_to, subject: @ticket.id.to_s + @ticket.name.to_s
+    mail to: @mail_to, subject: @ticket.id.to_s + "-" + @ticket.name.to_s, from: "bethany.helpdesk@gmail.com"
   end
 end
