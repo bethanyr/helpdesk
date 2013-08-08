@@ -11,6 +11,7 @@ before_filter :find_ticket, :only => [:show, :edit, :update, :destroy]
   def create
     @ticket = Ticket.new(params[ :ticket])
     if @ticket.save
+      HelpdeskMailer.ticket_confirmation(@ticket).deliver
       flash[ :notice] = "Ticket has been created."
       redirect_to @ticket
     else
