@@ -1,6 +1,10 @@
 class ActivitiesController < ApplicationController
   before_filter :find_ticket
   before_filter :find_activity,:only => [:show, :edit, :update, :destroy]
+
+  def index
+    @activities = @ticket.activities.all
+  end
   def new
     @activity = @ticket.activities.build
   end

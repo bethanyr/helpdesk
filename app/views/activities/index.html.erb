@@ -1,0 +1,10 @@
+<h2>Activities</h2>
+<ul>
+<% @ticket.activities.each do |activity| %>
+  <li><%= link_to activity.subject, activity %></li>
+<% end %>
+</ul>
+
+<%= link_to "New Activity", new_ticket_activity_path %>
+
+
